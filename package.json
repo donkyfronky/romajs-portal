@@ -6,7 +6,8 @@
     "start": "next start",
     "test": "jest",
     "lint": "next lint",
-    "export": "next build && next export && yarn flushCache",
+    "export": "next build && yarn sitemap &&  next export && yarn flushCache",
+    "sitemap": "next-sitemap",
     "flushCache": "rimraf ./store.json"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
     "eslint-plugin-react": "7.23.2",
     "eslint-plugin-react-hooks": "4.2.0",
     "jest": "^27.5.1",
+    "next-sitemap": "^2.5.14",
     "pino": "^7.9.2",
     "pino-pretty": "^7.6.0",
     "postcss": "^8.4.12",
