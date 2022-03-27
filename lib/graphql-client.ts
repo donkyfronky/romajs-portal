@@ -18,8 +18,8 @@ export async function GraphQLClient<T>(
     query,
     variables,
   });
-  //console.log(finalQuery);
-  const res = await fetch(process.env.MEETUP_GRAPHQL_ENDPOINT, {
+
+  const res = await fetch(env.MEETUP_GRAPHQL_ENDPOINT, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export async function getMeetupsCount(): Promise<number> {
   const response = await GraphQLClient<{
     groupByUrlname: { pastEvents: { count: number } };
   }>(LAST_MEETUP_COUNT, {
-    urlname: process.env.MEETUP_GROUP_ID,
+    urlname: env.MEETUP_GROUP_ID,
   });
   const {
     groupByUrlname: {
@@ -74,7 +74,7 @@ export async function getLastUpcomingEvent(): Promise<MeetupEventType> {
   const response = await GraphQLClient<{
     groupByUrlname: { upcomingEvents: { edges: { node: MeetupEventType }[] } };
   }>(LAST_UPCOMING_EVENT_QUERY, {
-    urlname: process.env.MEETUP_GROUP_ID,
+    urlname: env.MEETUP_GROUP_ID,
   });
   const {
     groupByUrlname: {
@@ -98,7 +98,7 @@ export async function getAllPastEvents(): Promise<MeetupEventType[]> {
   const response = await GraphQLClient<{
     groupByUrlname: { pastEvents: { edges: { node: MeetupEventType }[] } };
   }>(PAST_EVENT_QUERY, {
-    urlname: process.env.MEETUP_GROUP_ID,
+    urlname: env.MEETUP_GROUP_ID,
     itemsNum,
   });
   const {
