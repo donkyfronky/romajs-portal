@@ -47,3 +47,15 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./out
+  sitemaps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Google
+        uses: wei/curl@master
+        with:
+          args: http://www.google.com/webmasters/tools/ping?sitemap=${{ env.SITEMAP_URL }}
+      - name: Bing
+        uses: wei/curl@master
+        with:
+          args: http://www.bing.com/webmaster/ping.aspx?siteMap=${{ env.SITEMAP_URL }}
