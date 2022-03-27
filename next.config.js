@@ -22,7 +22,7 @@ module.exports = async (phase, { defaultConfig }) => {
   const nextConfig = {
     /* config options here */
     /** see on https://github.com/vercel/next.js/blob/canary/packages/next/server/config-shared.ts#L68 */
-    assetPrefix: isProd ? "romajs-portal" : "",
+    assetPrefix: isProd ? "/romajs-portal/" : "",
   };
   return nextConfig;
 };
