@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+  CACHE_ENABLED: ${{secrets.CACHE_ENABLED}}
 
   workflow_dispatch:
 
@@ -19,7 +21,6 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
-
       - name: Build
         run: |
           yarn install
