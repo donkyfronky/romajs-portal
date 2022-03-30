@@ -6,6 +6,9 @@ on:
       - main
 env:
   CACHE_ENABLED: ${{secrets.CACHE_ENABLED}}
+  MEETUP_GRAPHQL_ENDPOINT: ${{secrets.MEETUP_GRAPHQL_ENDPOINT}}
+  MEETUP_GROUP_ID: ${{secrets.MEETUP_GROUP_ID}}
+  SITE_URL: ${{secrets.SITE_URL}}
 
   workflow_dispatch:
 
