@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 const { env } = require("process");
 const pino = require("pino");
-const isProd = env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === "production";
 
 const logger = pino({
   transport: {
@@ -14,7 +14,7 @@ const logger = pino({
 });
 
 module.exports = async (phase, { defaultConfig }) => {
-  if (env.CACHE_ENABLED === "1") {
+  if (process.env.CACHE_ENABLED === "1") {
     logger.warn("CACHE DISABLED");
   } else {
     logger.info("CACHE ENABLED");
