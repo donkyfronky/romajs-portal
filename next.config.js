@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-const { env } = require("process");
 const pino = require("pino");
 const isProd = process.env.NODE_ENV === "production";
 
