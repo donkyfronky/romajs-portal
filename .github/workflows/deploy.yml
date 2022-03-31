@@ -36,11 +36,13 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
+      - name: Test
+        run: |
+          yarn test
       - name: Build
         run: |
           yarn install
           yarn export
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
