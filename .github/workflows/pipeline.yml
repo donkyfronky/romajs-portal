@@ -3,7 +3,7 @@ name: Deploy to Github Pages
 on:
   push:
     branches:
-      - main
+      - '*'
 env:
   CACHE_ENABLED: ${{secrets.CACHE_ENABLED}}
   MEETUP_GRAPHQL_ENDPOINT: ${{secrets.MEETUP_GRAPHQL_ENDPOINT}}
