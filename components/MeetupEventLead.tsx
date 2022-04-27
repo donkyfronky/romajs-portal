@@ -16,7 +16,9 @@ export default function MeetupEventLead({
           </Link>
         </h2>
         <img className="article-image" src={event.imageUrl} alt={event.title} />
-        <p className="article-body">short description</p>
+        {event.shortDescription && (
+          <p className="article-body">{event.shortDescription}</p>
+        )}
       </div>
     </div>
   );
