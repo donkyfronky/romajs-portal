@@ -1,17 +1,29 @@
-# WIP Project
+# RomaJS public website
 
-This site is under construction
+> WIP - In the meantime, join our [Slack channel](https://romajs.herokuapp.com/)
 
-## How to use
+## Development
 
-To get development local serv run
+Copy the default environment file
+
+```bash
+cp .env.local.example .env.local
+```
+
+Run the local development server
 
 ```bash
 yarn dev
 ```
 
-To get static html run
+Generate the static version of the website
 
 ```bash
 yarn export
 ```
+
+## Installing yarn
+
+If you don't have yarn already installed on you machine, you can use [NodeJS corepack module](https://nodejs.org/dist/latest/docs/api/corepack.html) to manage its installation.
+
+Just enable it using `npm i -g corepack` and then use yarn as if it was installed.
